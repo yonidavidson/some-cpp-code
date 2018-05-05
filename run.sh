@@ -1,1 +1,1 @@
-docker run -it --rm -v $PWD:/src/ ubuntu
+docker run -it --rm -v $PWD:/src/ ubuntu:yoni
