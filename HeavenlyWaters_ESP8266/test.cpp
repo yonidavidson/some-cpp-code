@@ -8,3 +8,9 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(3) == 6 );
     REQUIRE( Factorial(10) == 3628800 );
 }
+
+
+TEST_CASE( "Check default Command line parser" ) {
+    SerialPortalHandler *uut = new SerialPortalHandler();
+    REQUIRE( uut->SerialStringBuilder(NULL,0,0) == 0 );
+}

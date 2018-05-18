@@ -1,10 +1,10 @@
 unsigned int Factorial( unsigned int number );
 
-// class 
-// {
-//  private:
-//  int num;
-//  public:
-//  Num(int n);
-//  int getNum();
-// }; 
+class SerialPortalHandler
+{
+ private:
+ public:
+    int SerialStringBuilder(char* InputBuffer, int InputBufferSize, int NextPosition);
+    int CheckSerialBuffer(char* InputBuffer, int InputBufferSize, int NextPosition);
+    int ProcessInputBuffer(char* InputBuffer, int InputBufferSize, char* CommandBuffer, int CommandBufferSize, char* ArgumentBuffer, int ArgumentBufferSize);
+}; 
