@@ -5,9 +5,10 @@ unsigned int Factorial( unsigned int number ) {
 }
 
 int CommandHandler::Add(char command[],handler_function f,char description[]){
+    kept_function = f;
     return 0;
 }
 
 int CommandHandler::exec(char command[],char arguments[]){
-    return 0;
+    return kept_function(arguments);
 }

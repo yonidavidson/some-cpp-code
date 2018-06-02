@@ -10,7 +10,8 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
 }
 
 int my_function(char arguments[]){
-    return int(arguments[0]);
+    // return int(arguments[0]);
+    return 10;
 }
 
 TEST_CASE( "Check default Command line parser" ) {
