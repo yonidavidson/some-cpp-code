@@ -9,8 +9,19 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
     REQUIRE( Factorial(10) == 3628800 );
 }
 
+int my_function(char arguments[]){
+    return int(arguments[0]);
+}
 
 TEST_CASE( "Check default Command line parser" ) {
-    SerialPortalHandler *uut = new SerialPortalHandler();
-    REQUIRE( uut->SerialStringBuilder(NULL,0,0) == 0 );
+    char command[] = "my_command";
+    int a = 10;
+    char arguments[2];
+    sprintf(arguments,"%d",a);
+    
+    CommandHandler *uut = new CommandHandler();
+	int add_response = uut->Add("my_command", my_function, "sample function description");
+	int response = uut->exec(command, arguments);
+    REQUIRE(add_response == 0);
+    REQUIRE( response == 10 );
 }

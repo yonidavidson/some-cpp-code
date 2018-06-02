@@ -4,16 +4,10 @@ unsigned int Factorial( unsigned int number ) {
     return number <= 1 ? number : Factorial(number-1)*number;
 }
 
-int SerialPortalHandler::SerialStringBuilder(char* InputBuffer, int InputBufferSize, int NextPosition){
+int CommandHandler::Add(char command[],int (*pt2Function)(char command[]),char description[]){
     return 0;
 }
-int SerialPortalHandler::CheckSerialBuffer(char* InputBuffer, int InputBufferSize, int NextPosition){
-    return 0;
-}
-int SerialPortalHandler::ProcessInputBuffer(char* InputBuffer, int InputBufferSize, char* CommandBuffer,
-                                             int CommandBufferSize, char* ArgumentBuffer, 
-                                             int ArgumentBufferSize)
-{
-    return 0;
 
+int CommandHandler::exec(char command[],char arguments[]){
+    return 0;
 }
