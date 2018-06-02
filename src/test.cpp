@@ -17,11 +17,12 @@ TEST_CASE( "Check default Command line parser" ) {
     char command[] = "my_command";
     int a = 10;
     char arguments[2];
-    char description[] = "sample function description";
     sprintf(arguments,"%d",a);
-    
+    char description[] = "sample function description";
+    handler_function f = my_function;
+
     CommandHandler *uut = new CommandHandler();
-	int add_response = uut->Add(command, my_function, description);
+	int add_response = uut->Add(command, f, description);
 	int response = uut->exec(command, arguments);
     REQUIRE(add_response == 0);
     REQUIRE( response == 10 );

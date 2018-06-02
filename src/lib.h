@@ -1,9 +1,11 @@
+typedef int (*handler_function)(char command[]);
+
 unsigned int Factorial( unsigned int number );
 
 class CommandHandler
 {
  private:
  public:
-    int Add(char command[],int (*pt2Function)(char command[]),char description[]);
+    int Add(char command[],handler_function f,char description[]);
     int exec(char command[],char arguments[]);
 }; 
