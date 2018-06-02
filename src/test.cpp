@@ -10,15 +10,12 @@ TEST_CASE( "Factorials are computed", "[factorial]" ) {
 }
 
 int my_function(char arguments[]){
-    // return int(arguments[0]);
-    return 10;
+    return atoi(arguments);
 }
 
 TEST_CASE( "Check default Command line parser" ) {
     char command[] = "my_command";
-    int a = 10;
-    char arguments[2];
-    sprintf(arguments,"%d",a);
+    char arguments[]= "123";
     char description[] = "sample function description";
     handler_function f = my_function;
 
@@ -26,5 +23,5 @@ TEST_CASE( "Check default Command line parser" ) {
 	int add_response = uut->Add(command, f, description);
 	int response = uut->exec(command, arguments);
     REQUIRE(add_response == 0);
-    REQUIRE( response == 10 );
+    REQUIRE( response == 123 );
 }
