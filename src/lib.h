@@ -21,4 +21,3 @@ class CommandHandler
     int exec(char command[],char arguments[]);
     char *  description(char command[]);
 };
-
