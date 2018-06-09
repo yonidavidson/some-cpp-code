@@ -13,8 +13,9 @@ TEST_CASE( "Check default Command line parser" ) {
     handler_function f = my_function;
 
     CommandHandler *uut = new CommandHandler();
-	int add_response = uut->Add(command, f, description);
+	int add_response = uut->add(command, f, description);
 	int response = uut->exec(command, arguments);
     REQUIRE(add_response == 0);
     REQUIRE( response == 123 );
+    REQUIRE(!strcmp( description, uut->description(command)));
 }
