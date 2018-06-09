@@ -1,7 +1,5 @@
 typedef int (*handler_function)(char command[]);
 
-unsigned int Factorial( unsigned int number );
-
 class CommandHandler
 {
  private:
