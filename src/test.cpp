@@ -7,15 +7,27 @@ int my_function(char arguments[]){
 }
 
 TEST_CASE( "Check default Command line parser" ) {
-    char command[] = "my_command";
+    char key[] = "my_command";
     char arguments[]= "123";
     char description[] = "sample function description";
     handler_function f = my_function;
 
     CommandHandler *uut = new CommandHandler();
-	int add_response = uut->add(command, f, description);
-	int response = uut->exec(command, arguments);
+	int add_response = uut->add(key, f, description);
+	int response = uut->exec(key, arguments);
     REQUIRE(add_response == 0);
     REQUIRE( response == 123 );
-    REQUIRE(!strcmp( description, uut->description(command)));
+    REQUIRE(!strcmp( description, uut->description(key)));
+}
+
+TEST_CASE( "Check Command" ) {
+    char key[] = "my_command";
+    char arguments[]= "123";
+    char description[] = "sample function description";
+    handler_function f = my_function;
+
+    Command *uut = new Command(f,description,key);
+	int response = uut->exec(arguments);
+    REQUIRE( response == 123 );
+    REQUIRE(!strcmp( description, uut->description()));
 }
