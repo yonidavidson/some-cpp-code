@@ -17,9 +17,8 @@ class CommandHandler
  private:
     int MAX_SIZE = 10;
     Command * commands[10];
-    int index = 0;
-    Command* kept_command;
-
+    int num_of_functions = 0;
+    int getCommandIndex(char command[]);
 public:
     int add(char command[],handler_function f,char description[]);
     int exec(char command[],char arguments[]);
