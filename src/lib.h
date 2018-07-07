@@ -15,9 +15,14 @@ public:
 class CommandHandler
 {
  private:
-    Command * kept_command;
- public:
+    int MAX_SIZE = 10;
+    Command * commands[10];
+    int index = 0;
+    Command* kept_command;
+
+public:
     int add(char command[],handler_function f,char description[]);
     int exec(char command[],char arguments[]);
     char *  description(char command[]);
+
 };

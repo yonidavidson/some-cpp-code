@@ -23,7 +23,9 @@ char * Command::description(){
 //**********
 
 int CommandHandler::add(char command[],handler_function f,char description[]){
-    this->kept_command = new Command(f,description,command);
+    
+    this->commands[0] = new Command(f,description,command);
+    index = index + 1;
     return 0;
 }
 
