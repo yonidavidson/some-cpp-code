@@ -30,9 +30,9 @@ int CommandHandler::add(char command[],handler_function f,char description[]){
 }
 
 int CommandHandler::exec(char command[],char arguments[]){
-    return this->kept_command->exec(arguments);
+    return this->commands[0]->exec(arguments);
 }
 
 char * CommandHandler::description(char commandp[]){
-    return this->kept_command->description();
+    return this->commands[0]->description();
 }
